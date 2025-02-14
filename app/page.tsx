@@ -36,7 +36,14 @@ export default function Home() {
     <div className="w-screen h-screen flex flex-col">
       <h1 className="text-4xl font-bold text-center mt-10">SoundWave</h1>
       <p className="text-center mt-5">A sua playlist de músicas favoritas sem anúncios.</p>
-      <TableMusic />
+      <div className="grid grid-cols-6">
+        <div className="col-span-2 bg-red-100">
+        </div>
+        <div className="col-span-4">
+
+        <TableMusic />
+        </div>
+      </div>
       <MediaPlayer />
     </div>
   )

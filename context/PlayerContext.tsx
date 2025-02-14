@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 import { PlayerContextType, Track } from "./type";
+import { formatTime } from "@/lib/utils";
 
 export const PlayerContext = createContext({} as PlayerContextType);
 
@@ -9,14 +10,10 @@ export const usePlayerContext = () => {
   return useContext(PlayerContext);
 };
 
+
 export function PlayerContextProvider({ children }: { children: React.ReactNode }) {
 
-  const formatTime = (time: number) => {
-    const minutes = Math.floor(time / 60);
-    const seconds = Math.floor(time % 60);
-    return `${minutes}:${seconds}`;
-  };
-
+  
   const [currentTrack, setCurrentTrack] = useState<Track>({} as Track);
 
   // Unifique currentTime y duration en un solo estado
